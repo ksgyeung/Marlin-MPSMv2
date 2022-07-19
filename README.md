@@ -1,3 +1,25 @@
+# Before use
+
+NEVER use this fork if you do not understand the difference between max5800's version and my version marlin firmware.
+
+This is my modified version of marlin for MPSM v2. The following list shows what I changed in the firmware.
+- Fan will spin up when the hot end temperature goes above 50°C -> EXTRUDER_AUTO_FAN_TEMPERATURE
+- M106 ignores the specified speed, the value always set to 255
+- M107 will set the fan speed to max.
+- Prevent fan spin down when abortSDPrinting()
+- Linear Advance enabled by default, however the K value is uncalibrated. I will very happy if someone can provide a calibrated value to me or i will do a calibration later.
+- Second Linear Advance Constants is enabled.
+- S-Curve Acceleration is enabled.
+- Hot end and bed PID is set.
+ - Hot end P20 I0.02 D250
+ - Bed P106.56 I0.024 D93.81
+ - PID values came from https://docs.google.com/document/d/1HJaLIcUD4oiIUYu6In7Bxf7WxAOiT3n48RvOe5pvSHk/edit#
+ - Better to do a PID calibration instead using these values. 
+
+Compiled firmware is not provided. prevent someone going to destroying thier MPSM v2.
+
+# Comment from @max5800 
+
 https://www.youtube.com/watch?v=1RUXO9SUzUI&t=147s
 
 Heyho, this is my Version of Marlin for the MP Select Mini V2. Its based on verson 2.0.6.1. All the version after that one have a Watchdog bug, which will restart your printer every 8 seconds. It compiles using VSCode. But, due to a bug, not on Windows 10. Use Windows 8.1 or below, Linux or OSX instead. 
