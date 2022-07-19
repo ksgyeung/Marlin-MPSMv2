@@ -80,7 +80,10 @@ void GcodeSuite::M106() {
       speed = parser.value_ushort();
 
     // Set speed, with constraint
-    thermalManager.set_fan_speed(pfan, speed);
+    //thermalManager.set_fan_speed(pfan, speed);
+
+    // always override fan speed to max
+    thermalManager.set_fan_speed(pfan, 255);
   }
 }
 
@@ -89,7 +92,11 @@ void GcodeSuite::M106() {
  */
 void GcodeSuite::M107() {
   const uint8_t p = parser.byteval('P', _ALT_P);
-  thermalManager.set_fan_speed(p, 0);
+  // disable fan off function
+  //thermalManager.set_fan_speed(p, 0);
+
+  // set fan speed to max
+  thermalManager.set_fan_speed(p, 255);
 }
 
 #endif // HAS_FAN
