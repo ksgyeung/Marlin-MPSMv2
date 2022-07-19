@@ -451,7 +451,8 @@ void startOrResumeJob() {
       thermalManager.disable_all_heaters();
     #endif
     #if !HAS_CUTTER
-      thermalManager.zero_fan_speeds();
+      // fan never be stopped on mp select v2
+      //thermalManager.zero_fan_speeds();
     #else
       cutter.kill();              // Full cutter shutdown including ISR control
     #endif
