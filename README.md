@@ -18,7 +18,7 @@ This is my modified version of marlin for MPSM v2. The following list shows what
 
 Compiled firmware is not provided. prevent someone going to destroying thier MPSM v2.
 
-# Comment from @max5800 
+# Comment from previous fork (@max5800) 
 
 https://www.youtube.com/watch?v=1RUXO9SUzUI&t=147s
 
